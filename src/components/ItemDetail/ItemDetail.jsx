@@ -1,5 +1,6 @@
 import React from "react";
 import "./ItemDetail.css";
+import ItemCount from "../ItemCount/ItemCount";
 
 function ItemDetail ({item}) {
     const {id, title, price, pictureUrl} = item;
@@ -10,6 +11,7 @@ function ItemDetail ({item}) {
             <p>ID:{id}</p>
             <p>{title}</p>
             <h2>{price}</h2>
+            <ItemCount />
         </div>
     );
 }
