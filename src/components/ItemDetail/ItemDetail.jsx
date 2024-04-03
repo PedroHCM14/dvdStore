@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./ItemDetail.css";
-import ItemCount from "../ItemCount/ItemCount";
 
-function ItemDetail ({item}) {
-    const {id, title, price, pictureUrl} = item;
+const ItemDetail = ({ item }) => {
+  const [loading, setLoading] = useState(true);
 
-    return (
-        <div>
-            <img src={picture} alt={title} />
-            <p>ID:{id}</p>
-            <p>{title}</p>
-            <h2>{price}</h2>
-            <ItemCount />
-        </div>
-    );
-}
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(delay);
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div>
+      <h2>{item.title}</h2>
+      <p>Stock: {item.stock}</p>
+      <p>Price: {item.price}</p>
+      <img src={item.pictureUrl} alt={item.title} />
+    </div>
+  );
+};
 
 export default ItemDetail;
