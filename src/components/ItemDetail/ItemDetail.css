@@ -6,9 +6,17 @@
 }
 
 .detail-picture {
-    display: block;
+    display: grid;
+    
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.detail-picture img {
+    justify-self: center;
 }
 
 .detail-info {
     font-size: 30px;
+    margin-left: 30px;
 }

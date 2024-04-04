@@ -5,7 +5,6 @@ import ItemList from '../ItemList/ItemList';
 function ItemListContainer (props) {
     return (
         <div>
-            <p>{props.message}</p>
             <ItemList />
         </div>
     );

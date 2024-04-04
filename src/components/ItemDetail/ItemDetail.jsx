@@ -14,7 +14,7 @@ const ItemDetail = ({ item }) => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Carregando...</div>;
   }
 
   return (
