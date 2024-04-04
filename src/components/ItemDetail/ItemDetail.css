@@ -1,0 +1,14 @@
+.detail {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px;
+}
+
+.detail-picture {
+    display: block;
+}
+
+.detail-info {
+    font-size: 30px;
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ItemDetail.css";
+import ItemCount from '../ItemCount/ItemCount'
 
 const ItemDetail = ({ item }) => {
   const [loading, setLoading] = useState(true);
@@ -17,11 +18,17 @@ const ItemDetail = ({ item }) => {
   }
 
   return (
-    <div>
-      <h2>{item.title}</h2>
-      <p>Stock: {item.stock}</p>
-      <p>Price: {item.price}</p>
-      <img src={item.pictureUrl} alt={item.title} />
+    <div className="detail">
+      <div className="detail-picture">
+        <img src={item.pictureUrl} alt={item.title} />
+        
+      </div>
+      <div className="detail-info">
+        <h2>{item.title}</h2>
+        <p>ID: {item.id}</p>
+        <p>R$ {item.price}</p>
+        <ItemCount stock={item.stock}/>
+      </div>
     </div>
   );
 };

@@ -8,7 +8,7 @@ function Item({ item, onClick }) {
     <div className="product" onClick={() => onClick(item)}>
       <img src={pictureUrl} alt={title} />
       <p>{title}</p>
-      <h2>{price}</h2>
+      <h2>R$ {price}</h2>
     </div>
   );
 }
