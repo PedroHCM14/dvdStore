@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Item from "../Item/Item";
 import "./ItemList.css";
-import ItemDetail from "../ItemDetail/ItemDetail";
+// import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemList = () => {
   const [items, setItems] = useState([]);
-  const [selectedItem, setSelectedItem] = useState(null);
+  // const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
     const Data = () => {
@@ -42,19 +42,17 @@ const ItemList = () => {
     Data();
   }, []);
 
-  const handleItemClick = (item) => {
-    setSelectedItem(item);
-  };
+  // const handleItemClick = (item) => {
+  //   setSelectedItem(item);
+  // };
 
   return (
-    <div>
       <div className="products">
         {items.map((item, index) => (
-          <Item key={index} item={item} onClick={handleItemClick} />
+          <Item key={index} item={item} />
         ))}
       </div>
-      {selectedItem && <ItemDetail item={selectedItem} />}
-    </div>
+      /* {selectedItem && <ItemDetail item={selectedItem} />} */
   );
 };
 
